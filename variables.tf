@@ -15,7 +15,7 @@ variable "subnet" {
 
 variable "instanceCount" {
   type = "string"
-  desciption = "The number of instances used in this service offerng."
+  description = "The number of instances used in this service offerng."
   default = "2"
 }
 
