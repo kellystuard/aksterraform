@@ -13,6 +13,12 @@ variable "subnet" {
   default     = "15.0.0.0/16"
 }
 
+variable "instancecountEFK" {
+}
+
+variable "instancecountMS" {
+}
+
 locals {
   environment = "${var.environment == "" ? random_pet.environment.id : var.environment}"
 }
