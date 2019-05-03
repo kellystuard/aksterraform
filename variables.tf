@@ -14,7 +14,7 @@ variable "subnet" {
 }
 
 variable "instanceCount" {
-  type = string
+  type = "string"
   desciption = "desc"
   default = "2"
 }
