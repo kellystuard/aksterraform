@@ -1,9 +1,9 @@
 module "efk" {
     source = "modules/efk"
-    instanceCount = "2"
+    instancecountEFK = "2"
 }
 
 module "ms"{
     source = "modules/ms"
-    instanceCount = "3"
+    instancecountMS = "3"
 }

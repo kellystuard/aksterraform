@@ -2,7 +2,7 @@ resource "random_pet" "environment"  {
 }
 
 resource "ic" "instancecount" {
-  
+
 }
 
 variable "environment" {
@@ -17,8 +17,12 @@ variable "subnet" {
   default     = "15.0.0.0/16"
 }
 
-variable "instancecount" {
+variable "instancecountEFK" {
 }
+
+variable "instancecountMS" {
+}
+
 
 locals {
   environment = "${var.environment == "" ? random_pet.environment.id : var.environment}"
