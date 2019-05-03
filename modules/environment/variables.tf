@@ -13,10 +13,10 @@ variable "subnet" {
   default     = "15.0.0.0/16"
 }
 
-variable "instancecountEFK" {
-}
-
-variable "instancecountMS" {
+variable "nodeCount" {
+  type        = "string"
+  description = "Number of Kubernetes nodes to spin up."
+  default     = 2
 }
 
 locals {
