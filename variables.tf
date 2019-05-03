@@ -1,6 +1,10 @@
 resource "random_pet" "environment"  {
 }
 
+resource "ic" "instancecount" {
+  
+}
+
 variable "environment" {
   type        = "string"
   description = "Name of environment. Used to tag resources."
