@@ -1,4 +1,4 @@
-resource "random_pet" "environment" "instanceCount" {
+resource "random_pet" "environment"  {
 }
 
 variable "environment" {
@@ -14,9 +14,6 @@ variable "subnet" {
 }
 
 variable "instanceCount" {
-  type = "string"
-  description = "The number of instances used in this service offerng."
-  default = "2"
 }
 
 locals {
