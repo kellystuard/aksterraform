@@ -13,7 +13,7 @@ variable "subnet" {
   default     = "15.0.0.0/16"
 }
 
-variable "instanceCount" {
+variable "instancecount" {
 }
 
 locals {
