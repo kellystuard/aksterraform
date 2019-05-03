@@ -1,4 +1,4 @@
-resource "random_pet" "environment" {
+resource "random_pet" "environment" "instanceCount" {
 }
 
 variable "environment" {
