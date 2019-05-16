@@ -56,6 +56,15 @@ resource "azurerm_subnet" "k8s_lb" {
   address_prefix       = "${cidrsubnet(var.subnet, 8, 2)}"
 }
 
+ service_principal {
+  client_id     = "${var.kubernetes_client_id}"
+  client_secret = "${var.kubernetes_client_secret}"
+  }
+
+ role_based_access_control {
+   enabled = true
+  }
+
 resource "azurerm_public_ip" "k8s" {
   name                = "public-ip-${local.environment}"
   location            = "${azurerm_resource_group.k8s.location}"
