@@ -27,21 +27,12 @@ resource "helm_release" "nginx" {
   
   set {
     name  = "rbac.create"
-    value = "false"
+    value = "true"
   }
   set {
     name = "controller.replicaCount"
     value = "3"
   }
-  values = [<<EOF
-controller:
-  service:
-    loadBalancerIP: ${local.azurerm_subnet_k8s-ingress_ip_address}
-    annotations:
-      service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-      service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "${local.azurerm_subnet_k8s-ingress_subnet_name}"
-EOF
-  ]
 }
 
 # Found at: https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/providers/azure/azure_loadbalancer.go#L38

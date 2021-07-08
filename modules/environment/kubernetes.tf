@@ -22,7 +22,7 @@ resource "azurerm_kubernetes_cluster" "k8s_ingress" {
 
   agent_pool_profile {
     name            = "default"
-    count           = "${var.nodeCount}"
+    count           = "3"
     vm_size         = "Standard_B2s"
     os_type         = "Linux"
     #allowed range: 30-1024
@@ -33,6 +33,10 @@ resource "azurerm_kubernetes_cluster" "k8s_ingress" {
   service_principal {
     client_id     = "${azuread_application.aks_app.application_id}"
     client_secret = "${random_string.aks_sp_password.result}"
+  }
+  
+  role_based_access_control {
+    enabled = true
   }
 
   network_profile {
